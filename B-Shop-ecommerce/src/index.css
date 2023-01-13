@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  background-color: #FAFAFA;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body img {
+  width: 100%;
+  height: auto;
+}
+body a {
+  text-decoration: none;
+}
+body a:hover {
+  text-decoration: none;
+  color: #FF0030;
+}
+
+.prod-img {
+  min-height: 200px;
+  overflow: hidden;
+}
+.prod-img img {
+  max-height: 200px;
+  max-width: 200px;
+  display: block;
+  margin: auto;
+  position: relative;
+}
+.prod-img :hover {
+  opacity: 0.7;
+}
+
+.spin-bx {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+span.price-bx {
+  position: absolute;
+  margin-top: -17%;
+  background: red;
+  color: #fff;
+  padding: 10px;
+  border-radius: 34px;
+}
+
+.cartbx {
+  position: relative;
+  font-weight: bold;
+}
+.cartbx .cart-count-x {
+  position: absolute;
+  top: -10px;
+  background: red;
+  border-radius: 50%;
+  text-align: center;
+  left: 7px;
+  width: 19px;
+  height: 19px;
+  font-size: 12px;
+}
+
+.prod-title {
+  overflow: hidden;
+}
+.prod-title a {
+  color: #000;
+  white-space: nowrap;
+}
+
+.footer-bx {
+  background-color: #292929;
+  color: #838383;
+}
+.footer-bx ul {
+  padding: 0;
+}
+.footer-bx ul li {
+  list-style: none;
+}
+.footer-bx ul li a {
+  color: #838383;
+}
+.footer-bx ul li :hover {
+  color: #FF0030;
+}/*# sourceMappingURL=index.css.map */
