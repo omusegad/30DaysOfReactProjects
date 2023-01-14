@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -14,7 +14,12 @@ body a {
 }
 body a:hover {
   text-decoration: none;
-  color: #FF0030;
+  color: #ff0030;
+}
+
+ul li.nav-item a {
+  padding: 10px 24px;
+  color: #000;
 }
 
 .prod-img {
@@ -53,7 +58,10 @@ span.price-bx {
   position: relative;
   font-weight: bold;
 }
-.cartbx .cart-count-x {
+.cartbx a {
+  color: #000;
+}
+.cartbx a .cart-count-x {
   position: absolute;
   top: -10px;
   background: red;
@@ -87,5 +95,5 @@ span.price-bx {
   color: #838383;
 }
 .footer-bx ul li :hover {
-  color: #FF0030;
+  color: #ff0030;
 }/*# sourceMappingURL=index.css.map */

@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { FetchState, Product } from "../apptypes/types";
 import ErroLoader from "../components/ErroLoader";
+import { addToCart } from "../redux/slices/cartSlice";
 
 export function UseGetProducts() {
   const [fetchingState, setFetchingState] = useState<FetchState>(
@@ -23,12 +25,19 @@ export function UseGetProducts() {
     fetchProduct();
   }, []);
 
+
+  // Initiate Add to Cart Redux Store Action
+  const dispatch = useDispatch();
+  const handleAddToCart = (product: Product) => {
+    dispatch(addToCart(product));
+  }
+
   console.log(products);
   return (
     <>
       {fetchingState === FetchState.LOADING && <ErroLoader />}
       {fetchingState === FetchState.ERROR && (
-        <p>Snap, sorry something went wrong!</p>
+        <p>Snap, Sorry something went wrong!</p>
       )}
 
       {fetchingState === FetchState.SUCCESS && (
@@ -57,7 +66,7 @@ export function UseGetProducts() {
                   <div className="span m-3 text-end">
                     <span>
                     </span>
-                    <button  className="btn btn-danger">Add to Cart</button>
+                    <button  className="btn btn-danger" onClick={() => handleAddToCart(product)}>Add to Cart</button>
                   </div>
                 </div>
               </div>

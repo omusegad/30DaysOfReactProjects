@@ -1,8 +1,7 @@
 export  enum FetchState{
     LOADING ="LOADING",
     SUCCESS ="SUCCESS",
-    ERROR ="ERROR",
-
+    ERROR ="ERROR"
 }
 
 export interface Product {
@@ -14,13 +13,17 @@ export interface Product {
     image:string,
     rating:Rating
 }
-
 interface Rating {
     rate:number,
     count:number
 }
 
-
 export interface countInterface{
     value:number
+}
+
+export interface Cart {
+    cart: Product[],
+    cartTotal: number,
+    cartTotalQuantity: number,
 }
