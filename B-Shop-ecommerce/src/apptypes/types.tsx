@@ -11,6 +11,7 @@ export interface Product {
     category:string,
     description:string,
     image:string,
+    quantity:number,
     rating:Rating
 }
 interface Rating {
@@ -24,6 +25,4 @@ export interface countInterface{
 
 export interface Cart {
     cart: Product[],
-    cartTotal: number,
-    cartTotalQuantity: number,
 }

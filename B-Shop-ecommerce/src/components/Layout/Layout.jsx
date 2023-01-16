@@ -1,6 +1,6 @@
 import NavBar from '../NavBar'
 import Footer from '../Footer'
-import Counter from '../Counter'
+// import Counter from '../Counter'
 
 export default function Layout({children}) {
   return (
@@ -11,7 +11,7 @@ export default function Layout({children}) {
             {children}
             </div>
         </main>
-        <Counter/>
+        {/* <Counter/> */}
         <Footer />
     </>
   )

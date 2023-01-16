@@ -1,7 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 export default function NavBar() {
+
+  const cartQunatity = useSelector(state => state.cart.cart.map(cartItems => cartItems.quantity).reduce((a, b) => a + b, 0))
+  // console.log(cartQunatity)
 
   return (
     <>
@@ -36,7 +40,7 @@ export default function NavBar() {
             <div className="form-inline my-2 my-lg-0 pull-end">
               <div className='cartbx'>
                  <Link to="/cart" > 
-                    <span className="cart-count-x text-white">0</span>
+                    <span className="cart-count-x text-white">{ cartQunatity }</span>
                   Cart 
                  </Link> 
               </div>
