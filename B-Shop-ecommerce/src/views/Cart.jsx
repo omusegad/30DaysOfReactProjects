@@ -2,11 +2,26 @@ import Layout from "../components/Layout/Layout";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { removeCartItem } from "../redux/slices/cartSlice";
+import { tostifyNotofication } from "../utils/tostify";
+
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Cart() {
   const cartItems = useSelector((state) => state.cart.cart);
+  const totalAmount = cartItems.reduce((total, item) => total + item.price, 0)
+
+  //Initiate dispatch from react redux
   const dispatch = useDispatch();
-  // console.log(cartItems);
+
+  // Handle remove from cart
+  const handleRemoveFromCart = (id) => {
+    dispatch(removeCartItem(id));
+    toast.success('Success Notification !', {
+      position: toast.POSITION.TOP_RIGHT
+    });
+
+  }
 
   return (
     <>
@@ -17,7 +32,7 @@ export default function Cart() {
               <div className="col-12">
                 {cartItems.map((item) => {
                   return (
-                    <div className="card mb-3">
+                    <div className="card mb-3" key={item.id}>
                       <div className="card-body">
                         <table
                           id="cart"
@@ -57,12 +72,11 @@ export default function Cart() {
                                   value={item.quantity}
                                 />
                               </td>
-                              <td className="pt-4">1.99</td>
-                              <td className="pt-4" data-th="">
+                              <td className="pt-4">{(item.price * item.quantity).toFixed(2)}</td>
+                              <td className="pt-4">
                                 <button
                                   className="btn btn-danger btn-sm"
-                                  onClick={() => dispatch(removeCartItem())}
-                                >
+                                  onClick={() => handleRemoveFromCart(item.id)}>
                                   x
                                 </button>
                               </td>
@@ -80,15 +94,16 @@ export default function Cart() {
                     <tr className="mb-3">
                       <td className="text-start">
                         <Link to="/" className="btn btn-info">
-                          Continue Shopping{" "}
+                          Continue Shopping
                         </Link>
                       </td>
                       <td className="hidden-xs text-center">
-                        <strong>Total $1.99</strong>
+                        
+                        <strong> Total : {totalAmount}</strong>
                       </td>
                       <td className="text-end">
                         <Link to="#" className="btn btn-success btn-block">
-                          Checkout{" "}
+                          Checkout
                         </Link>
                       </td>
                     </tr>
@@ -97,7 +112,7 @@ export default function Cart() {
               </div>
             </>
           )}
-          <div class="alert alert-success alert-dismissible fade show pt-4">
+          {/* <div class="alert alert-success alert-dismissible fade show pt-4">
            <div className="row">
             <div className="col-6">
             <h4 class="alert-heading">Your cart is empty!</h4>
@@ -106,7 +121,8 @@ export default function Cart() {
             <h4 class="alert-heading"><Link to="/" className="btn btn-danger"> Continue Shopping</Link></h4>
             </div>
            </div>
-          </div>
+          </div> */}
+
         </div>
       </Layout>
     </>

@@ -32,7 +32,7 @@ export function UseGetProducts() {
     dispatch(addToCart(product));
   }
 
-  console.log(products);
+  //console.log(products);
   return (
     <>
       {fetchingState === FetchState.LOADING && <ErroLoader />}

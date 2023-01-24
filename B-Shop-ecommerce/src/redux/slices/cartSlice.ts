@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { Cart, Product } from '../../apptypes/types';
+import { tostifyNotofication } from '../../utils/tostify';
 
 const cartInitialState:Cart = {
     cart: [],
@@ -23,8 +24,7 @@ export const cartSlice = createSlice({
             } 
         },
         removeCartItem: (state, action) => {
-            const {id} = action.payload;
-            const existing_item = state.cart.findIndex((i:Product) => i.id === id);
+            const existing_item = state.cart.findIndex((i:Product) => i.id === action.payload);
             if (existing_item >= 0) {
                 state.cart.splice(existing_item, 1);
             }
