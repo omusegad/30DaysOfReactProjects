@@ -4,6 +4,9 @@ import Image from 'next/image'
 
 export default function CustomButton() {
   return (
-    <button disabled={false} type={"button"} className={`custom-btn`} onClick={() => { }}>CustomButton</button>
+    <>
+      <button disabled={false} type={"button"} className={`custom-btn`} onClick={() => { }}>CustomButton</button>
+      <span className={`flex-1`}></span>
+    </>
   )
 }
