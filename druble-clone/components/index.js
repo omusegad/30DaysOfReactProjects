@@ -1,7 +1,10 @@
-import Navbar from "./Navbar"
 import Footer from "./Footer"
+import Homebanner from "./Homebanner"
+import Header from "./Header"
+
 
 export {
-    Navbar,
-    Footer
+    Header,
+    Footer,
+    Homebanner 
 }

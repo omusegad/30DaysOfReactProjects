@@ -31,10 +31,20 @@ export default function NavBar() {
                   Product
                 </Link>
               </li>
+               <li className="nav-item">
+                <Link to="/news" >
+                  News
+                </Link>
+              </li>
               <li className="nav-item">
                 <Link to="" > 
                   Contact Us 
               </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/login" > 
+                  Login 
+                 </Link>
               </li>
             </ul>
             <div className="form-inline my-2 my-lg-0 pull-end">
