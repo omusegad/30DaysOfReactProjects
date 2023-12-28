@@ -1,15 +1,12 @@
-import './App.css'
-import PageHeader from './layouts/PageHeader'
+
+import Header from "./layouts/Header";
 
 function App() {
-
   return (
-    <>
-     <PageHeader/>
-      <div>1</div>
-      <div>2</div>
-    </>
-  )
+    <div className="max-h-screen flex flex-col">
+        <Header />
+    </div>
+  );
 }
 
-export default App
+export default App;
