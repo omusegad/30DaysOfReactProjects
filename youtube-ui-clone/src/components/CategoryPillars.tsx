@@ -71,8 +71,8 @@ export default function CategoryPillars() {
   ];
   
   return (
-    <div className="relative overflow-x-hidden">
-      <div className="flex flex-row transition-shadow gap-2 whitespace-nowrap, w-[max-content]">
+    <div className="relative ">
+      <div className="flex overflow-x-auto flex-row transition-shadow gap-2 whitespace-nowrap, w-[max-content]">
         {cat.map((item) => {
           return (
             <a
